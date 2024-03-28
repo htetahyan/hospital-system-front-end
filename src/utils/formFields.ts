@@ -25,10 +25,10 @@ const defaultValidation = (type:string) => {
 
 export const patientFields = [
     { name: 'name', validation: Yup.string().min(2, 'Too Short!').max(70, 'Too Long!').required('Required'), type: 'text' },
-    { name: 'gender', validation: Yup.string().min(1,'please select').required('Required'), type: 'select' ,options: ['','male','female']},
+    { name: 'gender', validation: Yup.string().min(1,'please select').required('Required'), type: 'select' ,options: ['','M','F']},
     { name: 'phoneNumber', validation: defaultValidation('phone'), type: 'text' },
     { name: 'email', validation: defaultValidation('email'), type: 'email' },
-    { name: 'bloodType', validation: Yup.string().min(1,'please select').required('Required'), type: 'select',options:['','o','a'] },
+    { name: 'bloodType', validation: Yup.string().min(1,'please select').required('Required'), type: 'select',options:['','O','a'] },
     { name: 'birthDate', validation: Yup.date().required('Required'), type: 'date' },
     { name: 'address', validation: Yup.string().required('Required'), type: 'text' }
 ];

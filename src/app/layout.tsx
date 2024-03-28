@@ -5,6 +5,7 @@ import {QueryClient} from "@tanstack/query-core";
 import {QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryProvider} from "~/services/QueryClientProvider";
 import Sidebar from "~/components/sidebar";
+import {Toaster} from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({
 }>) {
   return (
       <ReactQueryProvider >
+
     <html lang="en">
       <body className={inter.className+'text-black dark:text-white bg-gray-200 dark:bg-gray-900'}>
+      <Toaster/>
     <div className={'flex '}><Sidebar/>
         <div className={'mt-4 w-full h-full'}>{children}</div></div>  </body>
     </html></ReactQueryProvider>

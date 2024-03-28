@@ -10,14 +10,23 @@ export default function ReuseableTableBody({cols,rows}:{cols:GridColDef[],rows:G
 
     console.log(rows)
     return (
-        <div className={'h-fit w-full'}>
-            <DataGrid slots={
+        <div className={' w-full'}>
+            <DataGrid
+                className={'min-h-[20vh]'}
+                slots={
                 {
 
                     toolbar: ToolBar,
 
                 }
-            }  autoHeight={false} rows={rows} columns={cols} getRowId={ (row) => {
+            }   rows={rows} columns={cols}
+            initialState={{
+                pagination: {
+                    paginationModel: { page: 0, pageSize: 10 },
+                },
+            }}
+
+                      getRowId={ (row) => {
 
                 return row.Id;
             } } />
